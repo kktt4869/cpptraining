@@ -142,11 +142,11 @@ void Print(Node *la){
 }
 
 void MergeList(Node* La,Node* Lb){
-    Node *s,*pa=La->next,*pb=Lb->next;
+    Node *s=La,*pa=La->next,*pb=Lb->next;//s指向表尾结点,初始指向表头空结点。
     La->next=NULL;  //将结果链表初始化为空。新链表直接用La的空间，不占用其他空间。
-    s->next=La;//s指向表尾结点,初始指向表头空结点
+//    s->next=La;
     
-   while(pa&&pb){
+	while(pa&&pb){
    		if(pa->data<=pb->data){
            s->next=pa; //将s指向pa
            s=pa; //更新表尾结点    
